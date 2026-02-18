@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soin studio（ソアンスタジオ）| 自分をととのえる、やさしい時間を。</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Shippori+Mincho:wght@400;500&family=Klee+One:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 400;
+            background-color: #FEFCFA;
+            color: #5A5A5A;
+            line-height: 1.8;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #C9B8A3;
+        }
+
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #EDE7DF;
+            padding: 120px 20px;
+        }
+
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .hero-side-image {
+            flex-shrink: 0;
+            width: 280px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #5A5A5A;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            line-height: 2;
+        }
+
+        .hero-location {
+            font-size: 1rem;
+            color: #C9B8A3;
+            margin: 0 auto 3rem;
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 48px;
+            background-color: #C9B8A3;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn:hover {
+            background-color: #b8a792;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #C9B8A3;
+            border: 1px solid #C9B8A3;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: #C9B8A3;
+            color: #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        /* About Section */
+        .about {
+            background-color: #FEFCFA;
+        }
+
+        .about p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* News Section */
+        .news {
+            background-color: #EDE7DF;
+        }
+
+        .news-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .news-item {
+            padding: 24px 0;
+            border-bottom: 1px solid #d4c8bb;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            font-size: 0.9rem;
+            color: #C9B8A3;
+            margin-bottom: 8px;
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+        }
+
+        /* Courses Section */
+        .courses {
+            background-color: #FEFCFA;
+        }
+
+        .course-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .course-image {
+            width: calc(33.333% - 14px);
+            max-width: 380px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .courses-intro {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 1.05rem;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .course-card {
+            background-color: #EDE7DF;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            color: #5A5A5A;
+        }
+
+        .course-card h3 {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #C9B8A3;
+            color: #C9B8A3;
+        }
+
+        .course-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .course-section h4 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #C9B8A3;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .course-section ul li {
+            padding: 4px 0 4px 16px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .course-section ul li:before {
+            content: "・";
+            position: absolute;
+            left: 0;
+        }
+
+        .course-price {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #C9B8A3;
+            margin: 1.5rem 0;
+        }
+
+        /* Profile Section */
+        .profile {
+            background-color: #fff5ee;
+        }
+
+        .profile-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .profile-image-wrapper {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            object-position: -40mm center;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .profile-name {
+            text-align: right;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: #C9B8A3;
+            font-family: 'Shippori Mincho', serif;
+        }
+
+        .profile-name-handwritten {
+            font-family: 'Klee One', cursive;
+            font-weight: 600;
+            font-size: 1.4rem;
+            font-style: italic;
+            letter-spacing: 0.05em;
+        }
+
+        /* Calendar Section */
+        .calendar-section {
+            background-color: #FEFCFA;
+        }
+
+        .calendar-intro {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        .calendar-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #EDE7DF;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .calendar-header h3 {
+            font-size: 1.5rem;
+            color: #5A5A5A;
+            margin: 0;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .calendar-nav button {
+            background-color: #C9B8A3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .calendar-nav button:hover {
+            background-color: #b8a792;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: 500;
+            color: #C9B8A3;
+            padding: 10px 0;
+            font-size: 0.85rem;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #FEFCFA;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 8px;
+            position: relative;
+        }
+
+        .calendar-day.other-month {
+            opacity: 0.3;
+        }
+
+        .calendar-day.available {
+            background-color: #C9B8A3;
+            color: white;
+        }
+
+        .calendar-day.available:hover {
+            background-color: #b8a792;
+            transform: scale(1.05);
+        }
+
+        .calendar-day-number {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .calendar-day-slots {
+            font-size: 0.7rem;
+            color: inherit;
+        }
+
+        .calendar-day.available .calendar-day-slots {
+            color: white;
+        }
+
+        .calendar-cta {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Form Section */
+        .form-section {
+            background-color: #FEFCFA;
+        }
+
+        .form-intro {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .required {
+            color: #C9B8A3;
+            font-size: 0.85rem;
+            margin-left: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d4c8bb;
+            border-radius: 4px;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            background-color: #FEFCFA;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-group {
+            margin-top: 24px;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-top: 4px;
+        }
+
+        .terms-box {
+            background-color: #FEFCFA;
+            border: 1px solid #d4c8bb;
+            border-radius: 4px;
+            padding: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .terms-box h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #5A5A5A;
+        }
+
+        .terms-box h4:first-child {
+            margin-top: 0;
+        }
+
+        .terms-box p {
+            margin-bottom: 1rem;
+        }
+
+        .terms-box ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-submit {
+            padding: 16px 80px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #EDE7DF;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7a7a7a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .hero-side-image {
+                width: 200px;
+                height: 280px;
+            }
+
+            .course-images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .course-image {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-wrapper">
+            <img src="pic/690A9407.jpg" alt="soin studio" class="hero-side-image">
+            <div class="hero-content">
+                <h1>自分をととのえる、<br>やさしい時間を。</h1>
+                <p>
+                    soin studio（ソアンスタジオ）は、忙しい毎日にそっと寄りそう、<br>
+                    からだと心のケア教室です。<br>
+                    麹とオーガニックな暮らしを通じて、<br>
+                    あなた本来のやわらかさを取り戻しましょう。
+                </p>
+                <p class="hero-location">
+                    📍 愛知県名古屋市名東区で開催
+                </p>
+                <div class="cta-buttons">
+                    <a href="#courses" class="btn">コースを見る</a>
+                    <a href="#form" class="btn btn-outline">お申し込み</a>
+                </div>
+            </div>
+            <img src="pic/pic8.jpg" alt="soin studio" class="hero-side-image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>soinが大切にしていること</h2>
+            <p>
+                soin studio（ソアンスタジオ）は、フランス語で「ケア」「手入れ」「心遣い」を意味します。<br>
+                看護師・保健師として多くの方の健康と向き合ってきた経験から、<br>
+                日々のちいさな習慣が、心とからだを支えることを実感してきました。
+            </p>
+            <p>
+                麹を使った発酵食づくりや、オーガニックリネンに囲まれた丁寧な暮らし。<br>
+                そんな「ととのえる時間」を通じて、自分自身をいたわる余白を持ちませんか。
+            </p>
+            <p>
+                soin studioでは、無理なく続けられる麹料理の基本と、<br>
+                季節に寄りそう暮らしのヒントをお伝えしています。
+            </p>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news">
+        <div class="container">
+            <h2>お知らせ</h2>
+            <ul class="news-list">
+                <li class="news-item">
+                    <div class="news-date">2025.02.10</div>
+                    <div class="news-title">春の麹料理レッスン、3月スケジュール公開しました</div>
+                </li>
+                <li class="news-item">
+                    <div class="news-date">2025.01.28</div>
+                    <div class="news-title">【募集開始】はじめての麹ケアコース（オンライン対応）</div>
+                </li>
+                <li class="news-item">
+                    <div class="news-date">2025.01.15</div>
+                    <div class="news-title">冬の発酵レシピを公式noteで公開中</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <h2>コース紹介</h2>
+            <div class="courses-intro">
+                あなたのペースで、無理なく。<br>
+                3つのコースから、今の自分にぴったりなものをお選びください。
+            </div>
+
+            <div class="course-images">
+                <img src="pic/690A9570.jpg" alt="麹料理" class="course-image">
+                <img src="pic/690A9587.jpg" alt="麹料理" class="course-image">
+                <img src="pic/690A9616.jpg" alt="麹料理" class="course-image">
+            </div>
+
+            <div class="course-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <h3>4回コース</h3>
+
+                    <div class="course-section">
+                        <h4>対象者</h4>
+                        <ul>
+                            <li>麹や発酵食が初めての方</li>
+                            <li>基礎から丁寧に学びたい方</li>
+                            <li>自分と家族のからだをやさしく整えたい方</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>得られること</h4>
+                        <ul>
+                            <li>麹の基本（甘酒・塩麹・醤油麹）が作れる</li>
+                            <li>腸を整え、免疫力をサポートする食習慣</li>
+                            <li>忙しい日常でも続けられるレシピ</li>
+                            <li>季節に合わせた発酵食のアレンジ</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>開催形式</h4>
+                        <p>対面 / オンライン（Zoom）選択可</p>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>所要時間</h4>
+                        <p>全4回・各回2時間（月1回ペース推奨）</p>
+                    </div>
+
+                    <div class="course-price">33,000円（税込）</div>
+
+                    <a href="#form" class="btn" style="width: 100%; text-align: center;">このコースに申し込む</a>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <h3>8回コース</h3>
+
+                    <div class="course-section">
+                        <h4>対象者</h4>
+                        <ul>
+                            <li>麹の基本を習得済みの方</li>
+                            <li>より深く発酵食を学びたい方</li>
+                            <li>体調に合わせた発酵食を作りたい方</li>
+                            <li>発酵食を暮らしの軸にしたい方</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>得られること</h4>
+                        <ul>
+                            <li>春夏秋冬、季節ごとの発酵レシピ</li>
+                            <li>不調に寄りそう食材の選び方</li>
+                            <li>発酵食を軸にした献立の立て方</li>
+                            <li>発酵×栄養学×予防医学の視点</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>開催形式</h4>
+                        <p>対面 / オンライン（Zoom）選択可</p>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>所要時間</h4>
+                        <p>全8回・各回2時間（月2回ペース推奨）</p>
+                    </div>
+
+                    <div class="course-price">66,000円（税込）</div>
+
+                    <a href="#form" class="btn" style="width: 100%; text-align: center;">このコースに申し込む</a>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <h3>麹生活マイスター養成講座</h3>
+
+                    <div class="course-section">
+                        <h4>対象者</h4>
+                        <ul>
+                            <li>発酵食を専門的に学びたい方</li>
+                            <li>麹料理教室を開きたい方</li>
+                            <li>家族や大切な人の健康を支えたい方</li>
+                            <li>体質改善や予防ケアを本格的に学びたい方</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>得られること</h4>
+                        <ul>
+                            <li>発酵×栄養学×予防医学の専門知識</li>
+                            <li>自分の体質に合わせたケアプラン作成</li>
+                            <li>麹料理教室開催のノウハウ</li>
+                            <li>認定証の授与</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>開催形式</h4>
+                        <p>対面 / オンライン + コミュニティサポート</p>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>所要時間</h4>
+                        <p>全5回・各回2.5時間 + 3ヶ月サポート</p>
+                    </div>
+
+                    <div class="course-price">88,000円（税込）</div>
+
+                    <a href="#form" class="btn" style="width: 100%; text-align: center;">このコースに申し込む</a>
+                </div>
+            </div>
+
+            <div class="course-images">
+                <img src="pic/pic2.jpg" alt="麹料理" class="course-image">
+                <img src="pic/pic4.jpg" alt="麹料理" class="course-image">
+                <img src="pic/pic7.jpg" alt="麹料理" class="course-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile">
+        <div class="container">
+            <h2>代表プロフィール</h2>
+            <div class="profile-content">
+                <div class="profile-image-wrapper">
+                    <img src="pic/690A9493.jpg" alt="代表 Yuki" class="profile-image">
+                </div>
+                <p>
+                    看護師・保健師として働いていましたが、夫の転勤をきっかけに退職し、子育て中心の生活になりました。
+                </p>
+                <p>
+                    子どもとの毎日の中で、自分や家族の体調のゆらぎや、アレルギーのことなど、「食事が体に与える影響」を実感する出来事が続きました。<br>
+                    それをきっかけに、少しずつ「健康をつくる食事」に向き合うようになりました。
+                </p>
+                <p>
+                    とはいえ、私はもともと料理が得意なタイプではありません。<br>
+                    手間がかかることは続かないし、頑張りすぎると疲れてしまう。そんな自分に合う方法を探して、いろいろ試してきました。
+                </p>
+                <p>
+                    その中で、無理なく続けられたのが「麹料理」でした。<br>
+                    簡単なのに美味しくて、体がよろこぶごはんが作れる。<br>
+                    その発見は、忙しい日々の中で私の心と体をそっと支えてくれました。
+                </p>
+                <p>
+                    そして、「この麹料理の魅力を、同じように悩んでいる人にも伝えたい」<br>
+                    そんな思いが少しずつ大きくなり、料理教室を始めることにしました。
+                </p>
+                <div class="profile-name">soin studio 代表　<span class="profile-name-handwritten">Yuki</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section" id="calendar">
+        <div class="container">
+            <h2>予約可能日</h2>
+            <div class="calendar-intro">
+                ご希望の日程を選択してお申し込みください。<br>
+                <small style="color: #C9B8A3;">※色付きの日付が予約可能です</small>
+            </div>
+            <div class="calendar-wrapper">
+                <div class="calendar-header">
+                    <h3 id="currentMonth"></h3>
+                    <div class="calendar-nav">
+                        <button id="prevMonth">前月</button>
+                        <button id="nextMonth">次月</button>
+                    </div>
+                </div>
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+            <div class="calendar-cta">
+                <p id="selectedDate" style="margin-bottom: 15px; color: #C9B8A3;"></p>
+                <a href="#form" class="btn" id="reserveButton">この日程で申し込む</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="form">
+        <div class="container">
+            <h2>お申し込み</h2>
+            <div class="form-intro">
+                下記フォームよりお気軽にお申し込みください。<br>
+                2営業日以内に、詳細をメールにてご案内いたします。
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label>お名前（姓）<span class="required">必須</span></label>
+                    <input type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>お名前（名）<span class="required">必須</span></label>
+                    <input type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>ふりがな（せい）<span class="required">必須</span></label>
+                    <input type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>ふりがな（めい）<span class="required">必須</span></label>
+                    <input type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>メールアドレス<span class="required">必須</span></label>
+                    <input type="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>電話番号<span class="required">必須</span></label>
+                    <input type="tel" required>
+                </div>
+
+                <div class="form-group">
+                    <label>ご希望のコース<span class="required">必須</span></label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="course" value="4times" required>
+                            <span>4回コース</span>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="course" value="8times" required>
+                            <span>8回コース</span>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="course" value="meister" required>
+                            <span>麹生活マイスター養成講座</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>受講形式<span class="required">必須</span></label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="format" value="inperson" required>
+                            <span>対面</span>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="format" value="online" required>
+                            <span>オンライン</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ご住所（対面希望の方）</label>
+                    <input type="text">
+                </div>
+
+                <div class="form-group">
+                    <label>soinを知ったきっかけ</label>
+                    <select>
+                        <option value="">選択してください</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="google">Google検索</option>
+                        <option value="referral">ご紹介</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>ご質問・ご要望</label>
+                    <textarea></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>利用規約<span class="required">必須</span></label>
+                    <div class="terms-box">
+                        <h4>第1条(適用)</h4>
+                        <p>1. 本規約は、お客様と当方との間の本サービス利用に関わる一切の関係に適用されます。</p>
+                        <p>2. 当方が別途定める注意事項、案内、ガイドライン等がある場合、それらも本規約の一部を構成します。</p>
+
+                        <h4>第2条(お申し込み・契約成立)</h4>
+                        <p>1. お客様が当方の指定する方法で申し込みを行い、当方が申し込みを受領した時点で契約が成立します。</p>
+                        <p>2. 定員制の講座については、先着順または当方が定める基準により受付を行います。</p>
+                        <p>3. お申し込み後に、虚偽の申告や不適切な行為が判明した場合、当方はお申し込みをお断りする場合があります。</p>
+
+                        <h4>第3条(受講料・お支払い)</h4>
+                        <p>1. 受講料および参加費は、当方が指定する方法(クレジットカード決済、銀行振込等)によりお支払いいただきます。</p>
+                        <p>2. 銀行振込の場合、振込手数料はお客様負担となります。</p>
+                        <p>3. 支払期限までに入金が確認できない場合、当方は申し込みをキャンセル扱いとする場合があります。</p>
+
+                        <h4>第4条(キャンセル・返金)</h4>
+                        <p><strong>1. お客様都合によるキャンセル</strong><br>
+                            お客様のご都合によるキャンセルにつきましては、以下の通りキャンセル料を申し受けます。</p>
+                        <ul>
+                            <li>開催10日前まで：無料(※決済手数料等は差し引かせていただきます)</li>
+                            <li>開催10日前〜4日前：受講料の50％</li>
+                            <li>開催3日前〜当日：受講料の100％</li>
+                            <li>無断キャンセル：受講料の100％</li>
+                        </ul>
+                        <p>※銀行振込の場合、返金時の振込手数料はお客様負担となります。<br>
+                            ※体調不良等の理由により、当方が振替対応が可能と判断した場合は、返金よりも振替を優先してご案内する場合があります。</p>
+                        <p><strong>2. 当方都合による中止</strong><br>
+                            当方の都合により講座が中止となった場合は、受講料を全額返金、または振替日をご案内いたします。</p>
+
+                        <h4>第5条(デジタル商品のキャンセル)</h4>
+                        <p>デジタル商品(動画、PDF等)は商品の特性上、決済完了後の返金・キャンセルはお受けできません。</p>
+
+                        <h4>第6条(講座内容・提供方法の変更)</h4>
+                        <p>当方は、講座の品質維持や安全性確保のため、事前の告知の上で、講座内容・進行・資料・講師・開催方法(対面／オンライン)等を変更する場合があります。</p>
+
+                        <h4>第7条(禁止事項)</h4>
+                        <p>お客様は、本サービスの利用にあたり以下の行為を行ってはなりません。</p>
+                        <ul>
+                            <li>他のお客様、第三者、当方に迷惑または損害を与える行為</li>
+                            <li>講座の進行を妨げる行為、運営の妨害行為</li>
+                            <li>当方の許可なく、講座内容を録音・録画・撮影する行為</li>
+                            <li>当方の許可なく、講座資料・動画・PDF等を第三者へ共有、転載する行為</li>
+                            <li>SNS等で他者の個人情報(顔、名前、所属等)が特定される形で掲載する行為</li>
+                            <li>法令または公序良俗に反する行為</li>
+                            <li>その他、当方が不適切と判断する行為</li>
+                        </ul>
+
+                        <h4>第8条(著作権・知的財産権)</h4>
+                        <p>1. 講座内で提供される資料、レシピ、動画、画像、文章等の著作権および知的財産権は当方または正当な権利者に帰属します。</p>
+                        <p>2. お客様は、当方の許可なく、複製・改変・転載・配布・販売等を行うことはできません。</p>
+
+                        <h4>第9条(免責事項)</h4>
+                        <p>1. 本サービスで提供する内容は、健康・食生活に関する一般的な情報提供を目的としたものであり、医療行為・診断・治療を目的とするものではありません。</p>
+                        <p>2. 食物アレルギー、持病、体質、服薬中等の事情がある方は、必ず事前に医師等へ相談の上、ご自身の判断と責任でご参加ください。</p>
+                        <p>3. 講座で扱う食材・調味料等により生じた体調不良、事故、損害等について、当方の故意または重過失がある場合を除き、当方は責任を負いません。</p>
+                        <p>4. 通信環境、機材トラブル等によりオンライン講座の受講が困難となった場合、当方は可能な範囲で対応しますが、返金等を保証するものではありません。</p>
+
+                        <h4>第10条(個人情報の取り扱い)</h4>
+                        <p>当方は、お客様から取得した個人情報を、別途定めるプライバシーポリシーに基づき適切に取り扱います。</p>
+
+                        <h4>第11条(規約の変更)</h4>
+                        <p>当方は、必要と判断した場合、本規約を変更することがあります。変更後の規約は、当方のウェブサイト等に掲載した時点から効力を生じます。</p>
+
+                        <h4>第12条(準拠法・管轄)</h4>
+                        <p>1. 本規約の準拠法は日本法とします。</p>
+                        <p>2. 本サービスに関連して紛争が生じた場合、当方所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
+
+                        <p style="margin-top: 2rem;"><strong>付則</strong><br>
+                            本規約は、2026年◯月◯日より施行します。</p>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" required>
+                        <label>利用規約に同意する<span class="required">必須</span></label>
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-submit">送信する</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 soin studio（ソアンスタジオ）All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission (demo)
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('お申し込みありがとうございます。\n2営業日以内にご連絡いたします。');
+        });
+
+        // スプレッドシートから席数を動的に読み込む
+        let availableSlots = {};
+
+        const SHEET_ID = '1E-PgJq141bd9YRqQl1CpafBR1cD7nEpvEsLrfY9XQD0';
+        const API_KEY = 'AIzaSyAG-W3NPFc-O2NMtYAp28dmV4qb_3-jk_4';
+        const SHEET_NAME = encodeURIComponent('席数'); // シート名「席数」を指定
+
+        fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}!A:B?key=${API_KEY}`)
+            .then(res => res.json())
+            .then(data => {
+                const rows = (data.values || []).slice(1); // 1行目のヘッダーをスキップ
+                rows.forEach(row => {
+                    const raw = row[0]; // 例: "2026/03/05" または "2026-03-05"
+                    const slots = parseInt(row[1]);
+                    if (!raw || isNaN(slots) || slots <= 0) return;
+
+                    // スラッシュ・ハイフンどちらにも対応して YYYY-MM-DD 形式に統一
+                    const parts = raw.split(/[-\/]/);
+                    if (parts.length === 3) {
+                        const dateStr = `${parts[0]}-${parts[1].padStart(2, '0')}-${parts[2].padStart(2, '0')}`;
+                        availableSlots[dateStr] = slots;
+                    }
+                });
+                renderCalendar();
+            })
+            .catch(err => {
+                console.error('席数の取得に失敗:', err);
+                renderCalendar();
+            });
+
+        let currentDate = new Date();
+        let selectedDateStr = '';
+
+        function formatDate(year, month, day) {
+            return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        }
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            // 月の名前を表示
+            const monthNames = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+            document.getElementById('currentMonth').textContent = `${year}年 ${monthNames[month]}`;
+
+            // カレンダーグリッドをクリア
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = '';
+
+            // 曜日ヘッダー
+            const dayHeaders = ['日', '月', '火', '水', '木', '金', '土'];
+            dayHeaders.forEach(day => {
+                const header = document.createElement('div');
+                header.className = 'calendar-day-header';
+                header.textContent = day;
+                grid.appendChild(header);
+            });
+
+            // 月の最初の日と最後の日
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const prevLastDay = new Date(year, month, 0);
+
+            // 最初の日の曜日（0=日曜日）
+            const firstDayWeek = firstDay.getDay();
+
+            // 前月の日付を表示
+            for (let i = firstDayWeek - 1; i >= 0; i--) {
+                const day = prevLastDay.getDate() - i;
+                const dayDiv = createDayElement(year, month - 1, day, true);
+                grid.appendChild(dayDiv);
+            }
+
+            // 当月の日付を表示
+            for (let day = 1; day <= lastDay.getDate(); day++) {
+                const dayDiv = createDayElement(year, month, day, false);
+                grid.appendChild(dayDiv);
+            }
+
+            // 次月の日付を表示（グリッドを埋める）
+            const remainingCells = 42 - grid.children.length + 7; // 7は曜日ヘッダー分
+            for (let day = 1; day <= remainingCells; day++) {
+                const dayDiv = createDayElement(year, month + 1, day, true);
+                grid.appendChild(dayDiv);
+            }
+        }
+
+        function createDayElement(year, month, day, isOtherMonth) {
+            const dayDiv = document.createElement('div');
+            dayDiv.className = 'calendar-day';
+
+            if (isOtherMonth) {
+                dayDiv.classList.add('other-month');
+            }
+
+            const dateStr = formatDate(year, month + 1, day);
+            const slots = availableSlots[dateStr];
+
+            const dayNumber = document.createElement('div');
+            dayNumber.className = 'calendar-day-number';
+            dayNumber.textContent = day;
+            dayDiv.appendChild(dayNumber);
+
+            if (slots && slots > 0) {
+                dayDiv.classList.add('available');
+                const slotsDiv = document.createElement('div');
+                slotsDiv.className = 'calendar-day-slots';
+                slotsDiv.textContent = `${slots}枠`;
+                dayDiv.appendChild(slotsDiv);
+
+                dayDiv.addEventListener('click', () => {
+                    selectedDateStr = dateStr;
+                    document.getElementById('selectedDate').textContent =
+                        `選択日: ${year}年${month + 1}月${day}日 (${slots}枠予約可能)`;
+                });
+            }
+
+            return dayDiv;
+        }
+
+        // 前月・次月ボタン
+        document.getElementById('prevMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.getElementById('nextMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+    </script>
+</body>
+
+</html>
