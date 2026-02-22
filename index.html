@@ -233,6 +233,14 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
             color: #5A5A5A;
+            display: flex;
+            flex-direction: column;
+        }
+        .course-card > a.btn {
+            margin-top: auto;
+            text-align: center;
+            width: 100%;
+            line-height: 1.6;
         }
 
         .course-card h3 {
@@ -567,55 +575,47 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
+            h1 { font-size: 2rem; }
+            .hero-content h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            h3 { font-size: 1.3rem; }
 
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
+            section { padding: 60px 20px; }
 
-            h2 {
-                font-size: 1.6rem;
-            }
+            /* Hero */
+            .hero { padding: 60px 20px; min-height: auto; }
+            .hero-wrapper { flex-direction: column; gap: 24px; align-items: center; }
+            .hero-side-image:last-child { display: none; } /* 右の画像を非表示 */
+            .hero-side-image { width: 100%; max-width: 320px; height: 220px; }
 
-            section {
-                padding: 60px 20px;
-            }
+            /* CTA buttons */
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .cta-buttons .btn { width: 100%; max-width: 280px; }
 
-            .course-grid {
-                grid-template-columns: 1fr;
-            }
+            /* Courses */
+            .course-grid { grid-template-columns: 1fr; }
+            .course-images { flex-direction: column; align-items: center; }
+            .course-image { width: 100%; max-width: 320px; }
+            .course-card { padding: 28px; }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
+            /* Profile */
+            .profile-image { width: 220px; height: 220px; }
 
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
+            /* Calendar */
+            .calendar-wrapper { padding: 20px 14px; }
+            .calendar-day { padding: 4px; }
+            .calendar-day-number { font-size: 0.85rem; }
+            .calendar-day-slots { font-size: 0.6rem; }
 
-            .hero-wrapper {
-                flex-direction: column;
-                gap: 30px;
-            }
+            /* Form */
+            .btn-submit { padding: 16px 48px; }
+        }
 
-            .hero-side-image {
-                width: 200px;
-                height: 280px;
-            }
-
-            .course-images {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .course-image {
-                width: 100%;
-                max-width: 320px;
-            }
+        @media (max-width: 480px) {
+            h2 { font-size: 1.4rem; }
+            .hero-content h1 { font-size: 1.7rem; }
+            .course-card { padding: 24px; }
+            .calendar-grid { gap: 4px; }
         }
     </style>
 </head>
@@ -642,7 +642,7 @@
             <div class="hero-content">
                 <h1>自分をととのえる、<br>やさしい時間。</h1>
                 <p>
-                    soin studio（ソアンスタジオ）は、忙しい毎日にそっとよりそう教室です。
+                    soin studio（ソアンスタジオ）は、忙しい毎日に<br>そっと寄り添う教室です。
                 </p>
                 <p class="hero-location">
                     愛知県名古屋市名東区で開催
@@ -704,7 +704,7 @@
             <h2>コース紹介</h2>
             <div class="courses-intro">
                 あなたのペースで、無理なく。<br>
-                3つのコースから、今の自分にぴったりなものをお選びください。
+                今の自分にぴったりなコースをお選びください。
             </div>
 
             <div class="course-images">
@@ -749,7 +749,7 @@
 
                     <div class="course-price">6,000円（税込）</div>
 
-                    <a href="#form" class="btn" style="width: 100%; text-align: center;">このコースに申し込む</a>
+                    <a href="#form" class="btn">このコースに<br>申し込む</a>
                 </div>
 
                 <!-- 4回コース -->
@@ -786,7 +786,7 @@
 
                     <div class="course-price">36,000円（税込）</div>
 
-                    <a href="#form" class="btn" style="width: 100%; text-align: center;">このコースに申し込む</a>
+                    <a href="#form" class="btn">このコースに<br>申し込む</a>
                 </div>
 
                 <!-- 8回コース -->
@@ -823,7 +823,7 @@
 
                     <div class="course-price">70,000円（税込）</div>
 
-                    <a href="#form" class="btn" style="width: 100%; text-align: center;">このコースに申し込む</a>
+                    <a href="#form" class="btn">このコースに<br>申し込む</a>
                 </div>
             </div>
 
@@ -866,7 +866,7 @@
                 </div>
                 <div class="course-card-wide-right">
                     <div class="course-price">価格はお問い合わせください</div>
-                    <a href="#form" class="btn" style="text-align: center;">無料相談に申し込む</a>
+                    <a href="#form" class="btn" style="text-align: center; line-height: 1.6;">このコースに<br>申し込む</a>
                 </div>
             </div>
 
@@ -898,7 +898,7 @@
                     忙しい日々の中で私の心とからだをそっと支えてくれました。
                 </p>
                 <p>
-                    そして、「この麹料理の魅力を、同じように悩んでいる人にも伝えたい」<br>
+                    そして、「この麹料理の魅力を、同じように悩んでいる人にも伝えたい。」<br>
                     そんな思いが少しずつ大きくなり、料理教室を始めることにしました。
                 </p>
                 <div class="profile-name">soin studio 代表　<span class="profile-name-handwritten">Yuki</span></div>
@@ -1573,10 +1573,24 @@
         .site-nav-links a.nav-cta:hover {
             background-color: #b8a792;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
+            .site-nav-inner { height: 48px; }
             .site-nav-logo { display: none; }
-            .site-nav-links { gap: 2px; }
-            .site-nav-links a { padding: 8px 10px; font-size: 0.8rem; }
+            .site-nav-links {
+                gap: 0;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding: 0 4px;
+                width: 100%;
+            }
+            .site-nav-links::-webkit-scrollbar { display: none; }
+            .site-nav-links a {
+                padding: 6px 12px;
+                font-size: 0.82rem;
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
         }
 
         /* FAQ */
