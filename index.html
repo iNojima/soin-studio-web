@@ -677,16 +677,56 @@
         </div>
     </section>
 
-    <!-- News Section -->
-    <section class="news">
+    <!-- Recommend Section -->
+    <section class="recommend">
         <div class="container">
-            <h2>お知らせ</h2>
-            <ul class="news-list">
-                <li class="news-item">
-                    <div class="news-date">2025.02.22</div>
-                    <div class="news-title">HPを公開しました</div>
-                </li>
-            </ul>
+            <h2>こんな方におすすめ</h2>
+
+            <div class="recommend-images">
+                <div class="recommend-img-wrap">
+                    <img src="pic/pic_koji1.jpg" alt="麹" class="recommend-img">
+                </div>
+                <div class="recommend-img-wrap">
+                    <img src="pic/pic_plate.jpg" alt="料理" class="recommend-img">
+                </div>
+                <div class="recommend-img-wrap">
+                    <img src="pic/pic_koji2.png" alt="麹料理" class="recommend-img">
+                </div>
+                <div class="recommend-img-wrap">
+                    <img src="pic/pic_plates.jpg" alt="食材" class="recommend-img">
+                </div>
+            </div>
+
+            <div class="recommend-list">
+                <div class="recommend-item">
+                    <div class="recommend-num">☑</div>
+                    <span>今までの食事を見直して食生活を改善したい</span>
+                </div>
+                <div class="recommend-item">
+                    <div class="recommend-num">☑</div>
+                    <span>自分や家族にあったものを選びたい</span>
+                </div>
+                <div class="recommend-item">
+                    <div class="recommend-num">☑</div>
+                    <span>自然体で食を楽しみたい</span>
+                </div>
+                <div class="recommend-item">
+                    <div class="recommend-num">☑</div>
+                    <span>食事作りのハードルを下げたい</span>
+                </div>
+                <div class="recommend-item">
+                    <div class="recommend-num">☑</div>
+                    <span>不調の原因を知り、改善したい</span>
+                </div>
+                <div class="recommend-item">
+                    <div class="recommend-num">☑</div>
+                    <span>簡単な無添加の方法を知りたい</span>
+                </div>
+                <div class="recommend-item">
+                    <div class="recommend-num">☑</div>
+                    <span>長く健康でいたいけど方法がわからない</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1652,6 +1692,60 @@
             margin-right: 8px;
         }
         .faq-item.open .faq-answer { display: block; }
+
+        /* こんな方におすすめ */
+        .recommend {
+            background-color: #FEFCFA;
+        }
+        .recommend-images {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 56px;
+        }
+        .recommend-img-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .recommend-img {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #C9B8A3;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        }
+        .recommend-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .recommend-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #EDE7DF;
+            padding: 16px 24px;
+            border-radius: 10px;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: #5A5A5A;
+        }
+        .recommend-num {
+            flex-shrink: 0;
+            color: #C9B8A3;
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+        @media (max-width: 640px) {
+            .recommend-img { width: 165px; height: 165px; }
+            .recommend-images { gap: 16px; }
+        }
 
         /* 選択日ハイライト */
         .calendar-day.selected-day {
