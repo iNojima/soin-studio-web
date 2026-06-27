@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お料理の記録｜麹料理教室 soin studio（ソワンスタジオ）</title>
+
+    <!-- SEO: 基本メタ -->
+    <meta name="description" content="麹料理教室 soin studio（名古屋市名東区）で実際に作った麹・発酵料理の記録ページ。教室で実施したお料理やレッスンの様子を写真とともにご紹介します。">
+    <meta name="keywords" content="麹料理,発酵料理,料理教室,作品,記録,名古屋,名東区,soin studio,レシピ">
+    <meta name="author" content="soin studio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://inojima.github.io/soin-studio-web/gallery.html">
+
+    <!-- favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="pic/690A9604.jpg">
+
+    <!-- OGP -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="soin studio（ソワンスタジオ）">
+    <meta property="og:title" content="お料理の記録｜麹料理教室 soin studio">
+    <meta property="og:description" content="教室で実際に作った麹・発酵料理の記録。お料理やレッスンの様子を写真とともにご紹介します。">
+    <meta property="og:url" content="https://inojima.github.io/soin-studio-web/gallery.html">
+    <meta property="og:image" content="https://inojima.github.io/soin-studio-web/pic/690A9570.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YLTY41YRZ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YLTY41YRZ6');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Shippori+Mincho:wght@400;500&family=Klee+One:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 400;
+            background-color: #FEFCFA;
+            color: #5A5A5A;
+            line-height: 1.8;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        h2 { font-size: 2rem; margin-bottom: 1rem; text-align: center; }
+        h3 { font-size: 1.3rem; color: #C9B8A3; }
+
+        section { padding: 80px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        /* ナビゲーション（index と共通デザイン） */
+        .site-nav {
+            position: sticky; top: 0; z-index: 1000;
+            background-color: rgba(254, 252, 250, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e8ddd4;
+            padding: 0 20px;
+        }
+        .site-nav-inner {
+            max-width: 1000px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 56px;
+        }
+        .site-nav-logo {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1rem; color: #5A5A5A; text-decoration: none; letter-spacing: 0.05em;
+        }
+        .site-nav-links { display: flex; gap: 4px; align-items: center; }
+        .site-nav-links a {
+            display: inline-flex; align-items: center;
+            padding: 8px 16px; font-size: 0.88rem; color: #5A5A5A;
+            text-decoration: none; border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s; white-space: nowrap;
+        }
+        .site-nav-links a:hover { background-color: #EDE7DF; }
+        .site-nav-links a.active { color: #C9B8A3; }
+        .site-nav-links a.nav-instagram { color: #C9B8A3; padding: 8px 12px; }
+        .site-nav-links a.nav-instagram:hover { background-color: #EDE7DF; color: #b8a792; }
+
+        @media (max-width: 700px) {
+            .site-nav-inner { height: 48px; }
+            .site-nav-logo { display: none; }
+            .site-nav-links {
+                gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; padding: 0 4px; width: 100%;
+            }
+            .site-nav-links::-webkit-scrollbar { display: none; }
+            .site-nav-links a { padding: 6px 12px; font-size: 0.82rem; flex-shrink: 0; }
+        }
+
+        /* ページヘッダー */
+        .page-hero {
+            background-color: #EDE7DF;
+            text-align: center;
+            padding: 70px 20px;
+        }
+        .page-hero h1 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 2.2rem; color: #5A5A5A; margin-bottom: 1rem;
+        }
+        .page-hero p { font-size: 1.05rem; max-width: 640px; margin: 0 auto; }
+
+        /* ギャラリー（スプレッドシート管理） */
+        .gallery { background-color: #FEFCFA; }
+        .gallery-intro { text-align: center; margin-bottom: 50px; font-size: 1.02rem; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+        .gallery-card {
+            background-color: #FEFCFA;
+            border: 1px solid #EDE7DF;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+            display: flex; flex-direction: column;
+        }
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+        }
+        .gallery-card-img {
+            width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+            background-color: #EDE7DF; display: block;
+        }
+        .gallery-card-body { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+        .gallery-card-date { font-size: 0.8rem; color: #C9B8A3; margin-bottom: 8px; }
+        .gallery-card-title { font-size: 1.15rem; margin-bottom: 10px; }
+        .gallery-card-desc { font-size: 0.92rem; line-height: 1.8; color: #6a6a6a; }
+        .gallery-card-tag {
+            align-self: flex-start; margin-top: 14px;
+            background: #EDE7DF; color: #b8a792;
+            font-size: 0.75rem; padding: 3px 12px; border-radius: 20px;
+        }
+
+        .gallery-status {
+            text-align: center; color: #C9B8A3; font-size: 0.95rem; padding: 40px 0;
+        }
+
+        /* Instagram リール */
+        .insta { background-color: #EDE7DF; }
+        .insta-intro { text-align: center; margin-bottom: 36px; font-size: 1.02rem; }
+        .reel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .reel-grid .instagram-media {
+            margin: 0 auto !important;
+            min-width: 280px !important;
+        }
+        .reel-cta-wrap { text-align: center; margin-top: 40px; }
+        .insta-fallback {
+            text-align: center; padding: 30px 20px;
+            max-width: 600px; margin: 0 auto;
+            background: #FEFCFA; border-radius: 12px;
+        }
+        .insta-cta {
+            display: inline-flex; align-items: center; gap: 8px;
+            margin-top: 8px;
+            background-color: #C9B8A3; color: #fff; text-decoration: none;
+            padding: 14px 36px; border-radius: 5px; font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .insta-cta:hover { background-color: #b8a792; }
+
+        /* 戻る導線 */
+        .back-cta { text-align: center; padding: 60px 20px 20px; }
+        .btn {
+            display: inline-block; padding: 14px 44px;
+            background-color: #C9B8A3; color: #fff; text-decoration: none;
+            border-radius: 5px; font-size: 1rem; transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+        .btn:hover { background-color: #b8a792; }
+
+        /* フッター */
+        footer {
+            background-color: #EDE7DF; padding: 40px 20px; text-align: center;
+            font-size: 0.9rem; color: #7a7a7a;
+        }
+        .footer-social { display: flex; justify-content: center; gap: 28px; margin-bottom: 20px; }
+        .footer-social-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: #7a7a7a; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;
+        }
+        .footer-social-link:hover { color: #C9B8A3; }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 20px; }
+            .page-hero h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="site-nav-inner">
+            <a href="index.html" class="site-nav-logo">soin studio</a>
+            <div class="site-nav-links">
+                <a href="index.html#courses">コース紹介</a>
+                <a href="gallery.html" class="active">お料理の記録</a>
+                <a href="index.html#greeting">あいさつ</a>
+                <a href="index.html#faq">よくある質問</a>
+                <a href="index.html#form">お申し込み</a>
+                <a href="https://www.instagram.com/soin_studio_/" target="_blank" rel="noopener"
+                   class="nav-instagram" aria-label="Instagram（外部リンク）">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <h1>お料理の記録</h1>
+        <p>教室で実際に作った麹・発酵料理や、レッスンの様子をご紹介します。<br>季節ごとのやさしいごはんを、どうぞご覧ください。</p>
+    </header>
+
+    <!-- ギャラリー（Googleスプレッドシートで管理） -->
+    <section class="gallery">
+        <div class="container">
+            <h2>教室のお料理</h2>
+            <div class="gallery-intro">これまでに教室で作ったお料理の記録です。</div>
+            <div id="galleryGrid" class="gallery-grid"></div>
+            <div id="galleryStatus" class="gallery-status">読み込み中…</div>
+        </div>
+    </section>
+
+    <!-- Instagram リール -->
+    <section class="insta">
+        <div class="container">
+            <h2>リール（動画）</h2>
+            <div class="insta-intro">教室の様子やお料理づくりを、Instagramのリールでご紹介しています。</div>
+
+            <!-- リールはここに公式埋め込みで表示されます（スプレッドシートの「リール」タブから読み込み） -->
+            <div id="reelGrid" class="reel-grid"></div>
+            <div id="reelStatus" class="insta-fallback">読み込み中…</div>
+
+            <div class="reel-cta-wrap">
+                <a href="https://www.instagram.com/soin_studio_/reels/" target="_blank" rel="noopener" class="insta-cta">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    Instagram でリールを全て見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 申し込み導線 -->
+    <div class="back-cta">
+        <a href="index.html#form" class="btn">教室に申し込む</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/soin_studio_/" target="_blank" rel="noopener"
+               class="footer-social-link" aria-label="Instagram（外部リンク）">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+            </a>
+            <a href="https://lin.ee/ZL35adMW" target="_blank" rel="noopener"
+               class="footer-social-link" aria-label="LINE（外部リンク）">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.02 3.55 7.39 8.34 8.03.32.07.77.21.88.49.1.25.07.64.03.89l-.14.85c-.04.25-.2.99.87.54 1.07-.45 5.77-3.4 7.87-5.82C21.36 13.5 22 11.87 22 10.13 22 5.64 17.52 2 12 2z"/>
+                </svg>
+                <span>LINE</span>
+            </a>
+        </div>
+        <p>&copy; 2025 soin studio（ソワンスタジオ）All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // =============================================================
+        // 料理ギャラリー: Googleスプレッドシートから読み込み
+        //
+        // index.html の予約カレンダーと同じスプレッドシートを使います。
+        // 「料理ギャラリー」という名前のシート（タブ）を追加し、
+        // 1行目を見出し、2行目以降に以下の順で入力してください。
+        //
+        //   A列: 日付      （例: 2026-06-20  ※空欄でもOK）
+        //   B列: 料理名    （例: 塩麹の鶏ハム）
+        //   C列: 説明      （例: しっとり柔らかく仕上がる定番メニュー）
+        //   D列: 画像URL   （pic/xxx.jpg もしくは https://〜 / Googleドライブ共有リンク可）
+        //   E列: コース    （任意。例: 体験コース）
+        //
+        // 新しい行を追加すると、このページに自動で反映されます。
+        // =============================================================
+        const SHEET_ID = '1E-PgJq141bd9YRqQl1CpafBR1cD7nEpvEsLrfY9XQD0';
+        const API_KEY = 'AIzaSyAG-W3NPFc-O2NMtYAp28dmV4qb_3-jk_4';
+        const GALLERY_SHEET_NAME = encodeURIComponent('料理ギャラリー');
+
+        const grid = document.getElementById('galleryGrid');
+        const statusEl = document.getElementById('galleryStatus');
+
+        // Googleドライブの共有リンクを画像表示用URLに変換
+        function normalizeImageUrl(url) {
+            if (!url) return '';
+            url = url.trim();
+            const drive = url.match(/drive\.google\.com\/file\/d\/([^/]+)/) ||
+                          url.match(/drive\.google\.com\/open\?id=([^&]+)/);
+            if (drive) return `https://drive.google.com/thumbnail?id=${drive[1]}&sz=w800`;
+            return url;
+        }
+
+        function escapeHtml(s) {
+            return (s || '').replace(/[&<>"']/g, c => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[c]));
+        }
+
+        function renderGallery(rows) {
+            // 新しい順（日付の降順）に並べ替え。日付が無い行は元の順を尊重して末尾に。
+            const indexed = rows.map((r, i) => ({ r, i }));
+            indexed.sort((a, b) => {
+                const da = (a.r[0] || '').trim(), db = (b.r[0] || '').trim();
+                if (da && db) return db.localeCompare(da);
+                if (da) return -1;
+                if (db) return 1;
+                return a.i - b.i;
+            });
+
+            const cards = indexed.map(({ r }) => {
+                const date = escapeHtml(r[0]);
+                const title = escapeHtml(r[1]);
+                const desc = escapeHtml(r[2]);
+                const img = normalizeImageUrl(r[3]);
+                const tag = escapeHtml(r[4]);
+                if (!title && !img) return '';
+                return `
+                    <article class="gallery-card">
+                        ${img ? `<img src="${escapeHtml(img)}" alt="${title || '教室で作った麹料理'}" class="gallery-card-img" loading="lazy">` : ''}
+                        <div class="gallery-card-body">
+                            ${date ? `<div class="gallery-card-date">${date}</div>` : ''}
+                            <h3 class="gallery-card-title">${title}</h3>
+                            ${desc ? `<p class="gallery-card-desc">${desc}</p>` : ''}
+                            ${tag ? `<span class="gallery-card-tag">${tag}</span>` : ''}
+                        </div>
+                    </article>`;
+            }).join('');
+
+            grid.innerHTML = cards;
+            statusEl.style.display = 'none';
+        }
+
+        fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${GALLERY_SHEET_NAME}!A:E?key=${API_KEY}`)
+            .then(res => {
+                if (!res.ok) throw new Error('sheet not found');
+                return res.json();
+            })
+            .then(data => {
+                const rows = (data.values || []).slice(1).filter(r => (r[1] || r[3]));
+                if (rows.length === 0) {
+                    statusEl.textContent = 'お料理の記録はただいま準備中です。';
+                    return;
+                }
+                renderGallery(rows);
+            })
+            .catch(() => {
+                statusEl.innerHTML =
+                    'お料理の記録はただいま準備中です。<br>最新のお料理は上記のInstagramからもご覧いただけます。';
+            });
+
+        // =============================================================
+        // Instagram リール: GoogleスプレッドシートのURLを公式埋め込みで表示
+        //
+        // 同じスプレッドシートに「リール」という名前のシート（タブ）を追加し、
+        // A列にリールのURLを1行ずつ貼り付けてください（1行目は見出しでOK）。
+        //
+        //   A列（リールURL）の例:
+        //     https://www.instagram.com/reel/Cxxxxxxxxxx/
+        //
+        // ▼リールURLのコピー方法（スマホアプリ）
+        //   リールを開く → 右下の「紙ヒコーキ」や「…」→「リンクをコピー」
+        //
+        // 新しいリールを投稿したら、行を1つ足すだけでこのページに反映されます。
+        // 表示件数の上限は MAX_REELS で調整できます（読み込みを軽くするため）。
+        // =============================================================
+        const REEL_SHEET_NAME = encodeURIComponent('リール');
+        const MAX_REELS = 12;
+
+        const reelGrid = document.getElementById('reelGrid');
+        const reelStatus = document.getElementById('reelStatus');
+
+        function loadInstagramEmbedScript() {
+            return new Promise(resolve => {
+                if (window.instgrm && window.instgrm.Embeds) { resolve(); return; }
+                let s = document.getElementById('ig-embed-script');
+                if (s) { s.addEventListener('load', () => resolve()); return; }
+                s = document.createElement('script');
+                s.id = 'ig-embed-script';
+                s.async = true;
+                s.src = 'https://www.instagram.com/embed.js';
+                s.onload = () => resolve();
+                s.onerror = () => resolve();
+                document.body.appendChild(s);
+            });
+        }
+
+        function renderReels(urls) {
+            const list = urls.slice(0, MAX_REELS);
+            reelGrid.innerHTML = list.map(url => `
+                <blockquote class="instagram-media"
+                    data-instgrm-permalink="${url}"
+                    data-instgrm-version="14"
+                    style="background:#FFF; border:0; border-radius:12px; margin:0; max-width:340px; width:100%;">
+                </blockquote>`).join('');
+            reelStatus.style.display = 'none';
+            loadInstagramEmbedScript().then(() => {
+                if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+            });
+        }
+
+        fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${REEL_SHEET_NAME}!A:A?key=${API_KEY}`)
+            .then(res => {
+                if (!res.ok) throw new Error('reel sheet not found');
+                return res.json();
+            })
+            .then(data => {
+                const urls = (data.values || [])
+                    .map(r => (r[0] || '').trim().split('?')[0])
+                    .filter(u => /instagram\.com\/(reel|p|tv)\//.test(u));
+                if (urls.length === 0) {
+                    reelStatus.innerHTML = 'リールはただいま準備中です。<br>下のボタンからInstagramでご覧いただけます。';
+                    return;
+                }
+                renderReels(urls);
+            })
+            .catch(() => {
+                reelStatus.innerHTML = 'リールはただいま準備中です。<br>下のボタンからInstagramでご覧いただけます。';
+            });
+    </script>
+</body>
+
+</html>

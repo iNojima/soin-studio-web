@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inojima.github.io/soin-studio-web/sitemap.xml
